@@ -1,6 +1,6 @@
 # Modern Information Retrieval
 
-### Phase1
+## Phase1
 - [x] Prepare Text
     - [x] Tokenization
     - [x] Lemmatization
