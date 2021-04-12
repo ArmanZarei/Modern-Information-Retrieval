@@ -15,7 +15,7 @@
 - [x] Positional Index Compression & Decompression
     - [x] Variable Byte Code
     - [x] Gamma Code
-- [x] Query Spell Correction
+- [x] Spell Correction
     - [x] Bigram index
     - [x] Best match using Jaccard distance & Edit Distance
 - [x] Query Search
