@@ -1,6 +1,6 @@
 # Modern Information Retrieval
 
-## Phase1
+## Phase 1
 - [x] Prepare Text
     - [x] Tokenization
     - [x] Lemmatization
@@ -29,3 +29,8 @@
         - [x] F1 Score
         - [x] AP Score
         - [x] NDCG Score
+
+## Phase 2
+Comming soon...
+## Phase 3
+Comming soon...
