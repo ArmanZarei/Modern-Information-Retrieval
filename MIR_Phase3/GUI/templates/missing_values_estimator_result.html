@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p class="text-center fs-5 page-title">
+    Missing Values Estimator - Training Result
+</p>
+
+<div class="row mt-5">
+    <div class="col-6 m-auto">
+        <table class="table text-center">
+            <thead>
+            <tr>
+                <th>Train Error</th>
+                <th>Test Error</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ train_err }}</td>
+                <td>{{ test_err }}</td>
+            <tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+{% endblock %}

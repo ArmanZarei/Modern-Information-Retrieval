@@ -1,0 +1,221 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-header">
+        Crawler
+    </div>
+    <div class="card-body">
+        <form action="{{ url_for('crawler_result') }}" method="post" enctype="multipart/form-data" class="row">
+            <div class="col-6">
+                <label for="crawl_count" class="form-label">Count</label>
+                <input type="number" class="form-control" id="crawl_count" placeholder="Number of pages to crawl"
+                       name="count" autocomplete="off">
+            </div>
+
+            <div class="col-6">
+                <div class="col">
+                    <label for="seedFile" class="form-label">Seed URLs file</label>
+                    <input class="form-control" type="file" id="seedFile" name="seed_file">
+                </div>
+            </div>
+
+            <div class="col-12 mt-3">
+                <input type="submit" class="btn btn-outline-primary" value="Start Crawling">
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="card mt-3">
+    <div class="card-header">
+        PageRank
+    </div>
+    <div class="card-body">
+        <form action="{{ url_for('pagerank_result') }}" method="post" enctype="multipart/form-data" class="row">
+            <div class="col-6">
+                <label for="pagerank_alpha" class="form-label">Alpha</label>
+                <input type="number" class="form-control" id="pagerank_alpha"
+                       placeholder="Alpha used in calculation of PageRank"
+                       name="alpha" autocomplete="off" step="0.01">
+            </div>
+
+            <div class="col-6">
+                <div class="col">
+                    <label for="pagerank_papers_file" class="form-label">Papers</label>
+                    <input class="form-control" type="file" id="pagerank_papers_file" name="pagerank_papers_file">
+                </div>
+            </div>
+
+            <div class="col-12 mt-3">
+                <input type="submit" class="btn btn-outline-primary" value="Calculate Page Rank">
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="card mt-3">
+    <div class="card-header">
+        HITS
+    </div>
+    <div class="card-body">
+        <form action="{{ url_for('hits_result') }}" method="post" enctype="multipart/form-data" class="row">
+            <div class="col-6">
+                <label for="hits_result_count" class="form-label">Result Count</label>
+                <input type="number" class="form-control" id="hits_result_count" placeholder="Top N authors"
+                       name="hits_result_count" autocomplete="off">
+            </div>
+
+            <div class="col-6">
+                <div class="col">
+                    <label for="hits_papers_file" class="form-label">Papers</label>
+                    <input class="form-control" type="file" id="hits_papers_file" name="hits_papers_file">
+                </div>
+            </div>
+
+            <div class="col-12 mt-3">
+                <input type="submit" class="btn btn-outline-primary" value="Calculate Authority">
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="card mt-3">
+    <div class="card-header">
+        Recommender System
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header">
+                        Content Based
+                    </div>
+                    <div class="card-body">
+                        <form action="{{ url_for('content_based_result') }}" method="post" enctype="multipart/form-data">
+                            <div>
+                                <label for="content_based_user_idx" class="form-label">Index of user</label>
+                                <input type="number" class="form-control" id="content_based_user_idx"
+                                       placeholder="The index of the user in your file"
+                                       name="content_based_user_idx" autocomplete="off">
+                            </div>
+
+                            <div class="mt-3">
+                                <label for="content_based_papers_file" class="form-label">Papers</label>
+                                    <input class="form-control" type="file" id="content_based_papers_file"
+                                           name="content_based_papers_file">
+                            </div>
+
+                            <div class="mt-3">
+                                <label for="content_based_users_file" class="form-label">Users Interest</label>
+                                    <input class="form-control" type="file" id="content_based_users_file"
+                                           name="content_based_users_file">
+                            </div>
+
+                            <div class="mt-3">
+                                <label for="content_based_result_count" class="form-label">Result Count</label>
+                                <input type="number" class="form-control" id="content_based_result_count"
+                                       placeholder="Number of papers to recommend"
+                                       name="content_based_result_count" autocomplete="off">
+                            </div>
+
+                            <div class="mt-4">
+                                <input type="submit" class="btn btn-outline-primary" value="Recommend Papers">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header">
+                        Collaborative Filtering
+                    </div>
+                    <div class="card-body">
+                        <form action="{{ url_for('collaborative_filtering_result') }}" method="post" enctype="multipart/form-data">
+                            <div>
+                                <label for="collab_filtering_user_idx" class="form-label">Index of user</label>
+                                <input type="number" class="form-control" id="collab_filtering_user_idx"
+                                       placeholder="The index of the user in your file"
+                                       name="collab_filtering_user_idx" autocomplete="off">
+                            </div>
+
+                            <div class="mt-3">
+                                <label for="collab_filtering_papers_file" class="form-label">Papers</label>
+                                    <input class="form-control" type="file" id="collab_filtering_papers_file"
+                                           name="collab_filtering_papers_file">
+                            </div>
+
+                            <div class="mt-3">
+                                <label for="collab_filtering_users_file" class="form-label">Users Interest</label>
+                                    <input class="form-control" type="file" id="collab_filtering_users_file"
+                                           name="collab_filtering_users_file">
+                            </div>
+
+                            <div class="mt-3">
+                                <label for="collab_filtering_result_count" class="form-label">Result Count</label>
+                                <input type="number" class="form-control" id="collab_filtering_result_count"
+                                       placeholder="Number of papers to recommend"
+                                       name="collab_filtering_result_count" autocomplete="off">
+                            </div>
+
+                            <div class="mt-3">
+                                <label for="collab_filtering_neighbors_count" class="form-label">Neighbors Count</label>
+                                <input type="number" class="form-control" id="collab_filtering_neighbors_count"
+                                       placeholder="Number of most similar neighbors to predict with them"
+                                       name="collab_filtering_neighbors_count" autocomplete="off">
+                            </div>
+
+                            <div class="mt-4">
+                                <input type="submit" class="btn btn-outline-primary" value="Recommend Papers">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header">
+                        Missing Values Estimation
+                    </div>
+                    <div class="card-body">
+                        <form action="{{ url_for('estimate_missing_values') }}" method="post" enctype="multipart/form-data">
+                            <div class="mt-3">
+                                <label for="estimate_missing_values_file" class="form-label">Users CSV</label>
+                                    <input class="form-control" type="file" id="estimate_missing_values_file"
+                                           name="estimate_missing_values_file">
+                            </div>
+
+                            <div class="mt-3">
+                                <label for="estimate_missing_values_k" class="form-label">K</label>
+                                <input type="number" class="form-control" id="estimate_missing_values_k"
+                                       name="estimate_missing_values_k" autocomplete="off">
+                            </div>
+
+                            <div class="mt-3">
+                                <label for="estimate_missing_values_learning_rate" class="form-label">Learning Rate</label>
+                                <input type="number" class="form-control" id="estimate_missing_values_learning_rate" step="any"
+                                       name="estimate_missing_values_learning_rate" autocomplete="off">
+                            </div>
+
+                            <div class="mt-3">
+                                <label for="estimate_missing_values_steps" class="form-label">Steps</label>
+                                <input type="number" class="form-control" id="estimate_missing_values_steps"
+                                       name="estimate_missing_values_steps" autocomplete="off">
+                            </div>
+
+                            <div class="mt-4">
+                                <input type="submit" class="btn btn-outline-primary" value="Estimate">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

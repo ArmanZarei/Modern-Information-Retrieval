@@ -1,0 +1,5 @@
+flask
+selenium
+numpy
+pandas
+

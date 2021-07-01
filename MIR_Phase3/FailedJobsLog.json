@@ -1,0 +1,26 @@
+[
+    {
+        "url": "https://academic.microsoft.com/paper/3025398977/reference",
+        "exception": {
+            "Type": "TimeoutException",
+            "Stack Trace": [
+                "File : C:/Users/Arman_PC/Desktop/Project_P3/MIR_P3/crawler.py , Line : 80, Func.Name : crawl, Message : papers.append(self.__extract_paper_information(paper_id))",
+                "File : C:/Users/Arman_PC/Desktop/Project_P3/MIR_P3/crawler.py , Line : 56, Func.Name : __extract_paper_information, Message : 'related_topics': list(map(lambda d: d.text, self.__find_elements('.name-section .tag-cloud .ma-tag .text'))),",
+                "File : C:/Users/Arman_PC/Desktop/Project_P3/MIR_P3/crawler.py , Line : 38, Func.Name : __find_elements, Message : EC.presence_of_all_elements_located((By.CSS_SELECTOR, selector))",
+                "File : C:\\Users\\Arman_PC\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\selenium\\webdriver\\support\\wait.py , Line : 80, Func.Name : until, Message : raise TimeoutException(message, screen, stacktrace)"
+            ]
+        }
+    },
+    {
+        "url": "https://academic.microsoft.com/paper/3025398977/reference",
+        "exception": {
+            "Type": "TimeoutException",
+            "Stack Trace": [
+                "File : C:/Users/Arman_PC/Desktop/Project_P3/MIR_P3/crawler.py , Line : 80, Func.Name : crawl, Message : papers.append(self.__extract_paper_information(paper_id))",
+                "File : C:/Users/Arman_PC/Desktop/Project_P3/MIR_P3/crawler.py , Line : 56, Func.Name : __extract_paper_information, Message : 'related_topics': list(map(lambda d: d.text, self.__find_elements('.name-section .tag-cloud .ma-tag .text'))),",
+                "File : C:/Users/Arman_PC/Desktop/Project_P3/MIR_P3/crawler.py , Line : 38, Func.Name : __find_elements, Message : EC.presence_of_all_elements_located((By.CSS_SELECTOR, selector))",
+                "File : C:\\Users\\Arman_PC\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\selenium\\webdriver\\support\\wait.py , Line : 80, Func.Name : until, Message : raise TimeoutException(message, screen, stacktrace)"
+            ]
+        }
+    }
+]

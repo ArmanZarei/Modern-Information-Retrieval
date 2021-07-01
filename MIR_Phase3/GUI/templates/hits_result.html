@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p class="text-center fs-5 page-title">
+    HITS Result
+    <a href="{{ url_for('download', filename=result_file_name) }}" class="text-decoration-none" style="font-size: 12px">(Download)</a>
+</p>
+
+<div class="row mt-5">
+    <div class="col-6 m-auto">
+        <table class="table text-center">
+            <thead>
+            <tr>
+                <th>Author</th>
+                <th>Authority</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for author_name, authority in authors_authority.items() %}
+                <tr>
+                    <td>{{ author_name }}</td>
+                    <td>{{ authority }}</td>
+                <tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+{% endblock %}

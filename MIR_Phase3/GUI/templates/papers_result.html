@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p class="text-center fs-5 page-title">
+    {{ page_title }}
+    <a href="{{ url_for('download', filename=result_file_name) }}" class="text-decoration-none" style="font-size: 12px">(Download)</a>
+</p>
+
+{% for paper in papers %}
+<div class="card mt-5">
+    <div class="card-header d-flex">
+        {{ paper.title }}
+        <span class="ms-auto">Year: {{ paper.date }}</span>
+    </div>
+    <div class="card-body">
+        <div>
+            <span class="me-3"><span class="fs-2">{{ paper.reference_count }}</span> References</span>
+            <span><span class="fs-2">{{ paper.citation_count }}</span> Citations</span>
+        </div>
+        <div><span class="fw-bold">Authors:</span> {{ ", ".join(paper.authors) }}</div>
+        <div>
+            <span class="fw-bold">Related Topic:</span>
+            {% for topic in paper.related_topics %}
+            <span class="badge bg-secondary">{{ topic }}</span>
+            {% endfor %}
+        </div>
+        <hr>
+        <p class="card-text">{{ paper.abstract }}</p>
+        <hr>
+        <div>
+            <span class="fw-bold">References:</span>
+            {% for ref in paper.references %}
+            <span class="badge bg-light text-dark">{{ ref }}</span>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+
+{% endblock %}
