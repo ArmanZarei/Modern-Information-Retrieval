@@ -33,4 +33,14 @@
 ## Phase 2
 Comming soon...
 ## Phase 3
-Comming soon...
+- [x] Crawler
+    - [x] Selenium
+- [x] Page Rank
+- [x] HITS
+- [x] Recommender System
+    - [x] Content Based
+    - [x] Collaborative Filterign
+    - [x] Latent Factor Model (for recovery of missing values)  
+- [x] GUI
+    - [x] Flask
+    - [x] Bootstrap   
